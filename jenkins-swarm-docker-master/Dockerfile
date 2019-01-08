@@ -1,5 +1,5 @@
 # Came from article http://szborows.blogspot.com/2018/01/preconfigured-jenkins-cluster-in-docker.html and a lot of hacking
-FROM jenkins/jenkins:lts-alpine
+FROM jenkins/jenkins:2.157-alpine
 
 # set the user and group ids
 USER 1000:1000
