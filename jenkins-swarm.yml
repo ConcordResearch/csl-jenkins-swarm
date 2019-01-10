@@ -14,9 +14,9 @@ secrets:
 services:
   jenkins-master:
     hostname: jenkins-master
-    image: joncatlin/jenkins-swarm-master
+    image: ${MASTER_IMAGE_NAME}
     volumes:
-      - /mount/VM-File-Storage/jenkins-master:/var/jenkins_home
+      - /data/jenkins-master:/var/jenkins_home
     ports:
       - "8080:8080"
     networks:
@@ -33,7 +33,7 @@ services:
 
   jenkins-slave:
     hostname: jenkins-slave
-    image: joncatlin/jenkins-swarm-slave
+    image: ${NODE_IMAGE_NAME}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     networks:
